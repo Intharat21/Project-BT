@@ -1,0 +1,112 @@
+#include <iostream>
+#include <limits> // สำหรับ numeric_limits
+
+using namespace std;
+
+class Account {
+private:
+    double balance;
+
+public:
+    // Constructor
+    Account(double initial_balance) {
+        if (initial_balance >= 0) {
+            balance = initial_balance;
+        } else {
+            balance = 0;
+            cout << "Initial balance was invalid. Set to 0." << endl;
+        }
+    }
+
+    // Deposit function
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            cout << "Deposited: " << amount << endl;
+        } else {
+            cout << "Deposit amount must be positive." << endl;
+        }
+    }
+
+    // Withdraw function
+    void withdraw(double amount) {
+        if (amount > 0) {
+            if (amount <= balance) {
+                balance -= amount;
+                cout << "Withdrawn: " << amount << endl;
+            } else {
+                cout << "Insufficient funds." << endl;
+            }
+        } else {
+            cout << "Withdrawal amount must be positive." << endl;
+        }
+    }
+
+    // Display balance
+    void display_balance() const {
+        cout << "Current balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Account myAccount(0); // Start with an initial balance of 1000
+    int choice;
+    double amount;
+
+    do {
+        cout << "\n Banking CPE NU 30:" << endl;
+        cout << "1. Deposit" << endl;
+        cout << "2. Withdraw" << endl;
+        cout << "3. Check Balance" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice (1-4): ";
+        cin >> choice;
+
+        // Input validation
+        while (cin.fail()) {
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore incorrect input
+            cout << "Invalid input. Please enter a number between 1 and 4: ";
+            cin >> choice;
+        }
+
+        switch (choice) {
+            case 1:
+                cout << "Enter deposit amount: ";
+                cin >> amount;
+                while (cin.fail()) {
+                    cin.clear(); // Clear the error flag
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore incorrect input
+                    cout << "Invalid amount. Please enter a valid number: ";
+                    cin >> amount;
+                }
+                myAccount.deposit(amount);
+                break;
+
+            case 2:
+                cout << "Enter withdrawal amount: ";
+                cin >> amount;
+                while (cin.fail()) {
+                    cin.clear(); // Clear the error flag
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore incorrect input
+                    cout << "Invalid amount. Please enter a valid number: ";
+                    cin >> amount;
+                }
+                myAccount.withdraw(amount);
+                break;
+
+            case 3:
+                myAccount.display_balance();
+                break;
+
+            case 4:
+                cout << "Exiting the program." << endl;
+                break;
+
+            default:
+                cout << "Invalid choice. Please enter a number between 1 and 4." << endl;
+        }
+    } while (choice != 4);
+
+    return 0;
+}
