@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT Project</title>
+
+    <link rel="stylesheet" href="room.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+     <div class="wrapper">
+         <!-- ฟอร์มสำหรับการกรอก ID และ ชื่อ 3 คน -->
+         <form id="userForm" onsubmit="return validateForm()" action="ThankYou.html" method="GET">
+             <!-- คนที่ 1 -->
+             <h3>ข้อมูลคนที่ 1</h3>
+             <label for="id1">ID คนที่ 1 (ต้องมี 8 ตัวอักษร):</label>
+             <input type="text" id="id1" name="id1" required>
+             <br>
+             <label for="name1">ชื่อคนที่ 1:</label>
+             <input type="text" id="name1" name="name1" required>
+             <br>
+ 
+             <!-- คนที่ 2 -->
+             <h3>ข้อมูลคนที่ 2</h3>
+             <label for="id2">ID คนที่ 2 (ต้องมี 8 ตัวอักษร):</label>
+             <input type="text" id="id2" name="id2" required>
+             <br>
+             <label for="name2">ชื่อคนที่ 2:</label>
+             <input type="text" id="name2" name="name2" required>
+             <br>
+ 
+             <!-- คนที่ 3 -->
+             <h3>ข้อมูลคนที่ 3</h3>
+             <label for="id3">ID คนที่ 3 (ต้องมี 8 ตัวอักษร):</label>
+             <input type="text" id="id3" name="id3" required>
+             <br>
+             <label for="name3">ชื่อคนที่ 3:</label>
+             <input type="text" id="name3" name="name3" required>
+             <br>
+ 
+             <button type="submit">Submit</button>
+         </form>
+ 
+     <script src="script.js"></script>
+ </body>
+</html>

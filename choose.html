@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลือกห้อง</title>
+    <link rel="stylesheet" href="choose.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>เลือกห้อง</h1>
+        <!-- Add form to submit the data -->
+        <form id="roomForm" action="Room.html" method="GET">
+            <table id="roomTable">
+                <thead>
+                    <tr>
+                        <th>หมายเลขห้อง</th>
+                        <th>เลือก</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-status="available">
+                        <td>ห้อง 1</td>
+                        <td><input type="checkbox" name="room" value="room1"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 2</td>
+                        <td><input type="checkbox" name="room" value="room2"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 3</td>
+                        <td><input type="checkbox" name="room" value="room3"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 4</td>
+                        <td><input type="checkbox" name="room" value="room4"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 5</td>
+                        <td><input type="checkbox" name="room" value="room5"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 6</td>
+                        <td><input type="checkbox" name="room" value="room6"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 7</td>
+                        <td><input type="checkbox" name="room" value="room7"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 8</td>
+                        <td><input type="checkbox" name="room" value="room8"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 9</td>
+                        <td><input type="checkbox" name="room" value="room9"></td>
+                    </tr>
+                    <tr data-status="available">
+                        <td>ห้อง 10</td>
+                        <td><input type="checkbox" name="room" value="room10"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Submit button -->
+            <button type="button" onclick="submitRooms()">ยืนยันการเลือกห้อง</button>
+        </form>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script2.js"></script>
+</body>
+</html>
